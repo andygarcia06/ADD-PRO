@@ -44,7 +44,8 @@ const arrayDatasModal = [
     [ "Modélisation d'un challet", "Modélisation d'une chambre", "Modélisation d'un appartement", "Modélisation en 3D d'un aménagement extérieur", "Modélisation d'une maison","Modélisation d'un appartemment","Modélisation d'unne chambre", "Modélisation en 3D d'un appartemment"],
     ["img/portfolio/Chalet-Allos-scaled.jpeg","img/portfolio/master-room-scaled.jpeg","img/portfolio/renovation-appartement-3D-à-cannes-1.jpeg","img/portfolio/Modélisation en 3D d'un aménagement extérieur.jpg","img/portfolio/ENTRE INSTA.jpg","img/portfolio/renovation-appartement-3D-à-cannes-2.jpeg","img/portfolio/rénovation-chambre-en-3D-à-Nice.jpeg","img/portfolio/renovation-appartement-3D-à-cannes-1.jpeg"],
 ];
-const modalOpener = document.querySelectorAll('.modal-launcher')
+const modalOpener = document.querySelectorAll('.modal-launcher');
+const modalClose = document.querySelector('.modal-close-btn');
 const bodyBlur = document.querySelector('.blur-background');
 const openModal1 = document.querySelector('#modal-launcher-1');
 const experience = document.querySelector('#experience'); 
@@ -67,6 +68,15 @@ document.addEventListener("mouseup", ()=>{
   header.removeEventListener("mousemove", onDrag);
 });
 
+function closeModal(){
+    wrapper.style.visibility = 'hidden';
+
+    bodyBlur.style.filter = 'blur(0px)';
+    experience.style.filter = 'blur(0px)';
+    specialization.style.filter = 'blur(0px)';
+
+}
+
 
 
 function createContentModal(index){
@@ -86,12 +96,18 @@ function createContentModal(index){
     
 };
 
+
+
 openModal1.addEventListener('click',createContentModal);
 
 
  for (let i = 0; i < modalOpener.length; i++) {
      modalOpener[i].addEventListener("click", () => createContentModal(i));
  }
+
+ modalClose.addEventListener("click",closeModal);
+
+ 
 
 
 

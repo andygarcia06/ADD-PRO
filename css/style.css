@@ -1850,7 +1850,7 @@ footer{
   visibility: hidden;
   position: absolute;
   left: 50%;
-  bottom: 500vh;
+  /* bottom: 400vh; */
   z-index: 1000;
   background-color: #fafbf8;
   border-radius: 10px;
